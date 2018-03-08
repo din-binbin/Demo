@@ -1,0 +1,383 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?6n70j2');
+  src:  url('../fonts/icomoon.eot?6n70j2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?6n70j2') format('truetype'),
+    url('../fonts/icomoon.woff?6n70j2') format('woff'),
+    url('../fonts/icomoon.svg?6n70j2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e0cd";
+}
+.icon-blog:before {
+  content: "\e616";
+}
+.icon-mail:before {
+  content: "\e0e1";
+}
+.icon-link:before {
+  content: "\e157";
+}
+
+[class^="icon-"]::before {
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+
+/*第一栏布局*/
+
+.first-wrap {
+  color: #ffffff;
+  background: #188eee;
+  position: relative;
+}
+
+
+/*背景和背景动画*/
+
+.first-wrap .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../images/bg.png) repeat;
+  opacity: .8;
+  animation: flashing 1.5s linear infinite;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .6;
+  }
+  to {
+    opacity: .2;
+  }
+}
+
+
+/*第一块里的内容布局*/
+
+.inner-content {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/*a链接设置为白色*/
+
+.first-wrap a {
+  color: #fff;
+}
+
+
+/*头像*/
+
+.first-wrap .head-picture {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+  background: #fff;
+}
+
+
+/*头像鼠标悬浮动画效果*/
+
+@keyframes HeadFlash {
+  0% {
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.first-wrap .head-picture {
+  animation: HeadFlash 1.5s linear infinite;
+}
+
+
+/*姓名*/
+
+.first-wrap .name {
+  font-size: 30px;
+  margin: 20px 0 0;
+}
+
+
+/*联系方式*/
+
+.first-wrap .contacts {
+  margin: 30px 0 50px;
+}
+
+.first-wrap .contacts a {
+  vertical-align: center;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+
+/*信息介绍*/
+
+.first-wrap .some-info {
+  width: 310px;
+  height: 130px;
+  border: 1px solid #0E6AB8;
+  box-shadow: 0 0 1px #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-wrap .some-info li {
+  list-style: none;
+  width: 145px;
+  line-height: 1;
+  font-size: 15px;
+}
+
+
+/*第二栏布局*/
+
+.second-wrap {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  min-height: 100vh;
+}
+
+.second-wrap h2 {
+  font-size: 25px;
+  color: #188eee;
+}
+
+.second-wrap h3 {
+  font-size: 18px;
+}
+
+
+/*标题与横线*/
+
+.second-wrap .list-title {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0;
+}
+
+.second-wrap .list-title i {
+  flex: 1;
+  border-top: 1px solid #999;
+  width: 20vw;
+}
+
+
+/*经历内容样式*/
+
+.second-wrap .experience-list {
+  padding-left: 40px;
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.experience-item a{
+  font-size: 10px;
+  padding-left: 20px;
+  vertical-align: text-bottom;
+}
+
+
+/*时间线绘制*/
+
+.second-wrap .experience-list .period::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: relative;
+  left: -25px;
+  top: 20px;
+  border-radius: 50%;
+  background: radial-gradient(#188eee 40%, #c9e0f4 10%, #c9e0f4 50%);
+}
+
+.second-wrap .experience-list::before {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  left: 25px;
+  top: 20px;
+  background: linear-gradient(to bottom, #ccc 70%, #fff 100%);
+}
+
+
+/*内容间距*/
+
+.second-wrap .experience .work-content {
+  font-size: 14px;
+  color: #666;
+  padding-top: 20px;
+}
+
+
+/*技能特长样式*/
+
+.second-wrap .skill-list {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  display: flex;
+  flex-direction: column;
+}
+
+.second-wrap .skill .skill-description {
+  color: #666;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+
+/*右上角小按钮*/
+
+.second-wrap .skill .more {
+  color: #666;
+  font-size: 12px;
+  border: 1px solid #666;
+  padding: 0 5px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 8px;
+}
+
+.second-wrap .skill .skill-item {
+  position: relative;
+  margin: 10px 0 20px;
+}
+
+
+/*技能条设计*/
+
+.second-wrap .skill .progress-wrap {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.second-wrap .skill .progress {
+  height: 5px;
+  background: linear-gradient(to right, #188eee 50%, #10B0ED 100%);
+  border-radius: 4px;
+}
+
+
+/*响应式设计*/
+
+@media screen and (max-width: 768px) {
+  .page-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .second-wrap {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page-wrap {
+    display: flex;
+    flex-direction: row;
+  }
+  .first-wrap,
+  .second-wrap {
+    width: 50vw;
+    flex: 1;
+  }
+  .first-wrap {
+    position: fixed;
+  }
+  .second-wrap {
+    margin-left: 50vw;
+  }
+}
+
+
+/*进度条鼠标悬浮动画效果*/
+
+@keyframes progressFlashPs {
+  0% {
+    width: 5%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+
+@keyframes progressFlashHtml {
+  0% {
+    width: 5%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+@keyframes progressFlashJs {
+  0% {
+    width: 5%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.second-wrap .skill .ps:hover .progress {
+  animation: progressFlashPs 1s ease;
+}
+
+.second-wrap .skill .html:hover .progress {
+  animation: progressFlashHtml 1s ease;
+}
+
+.second-wrap .skill .Javascript:hover .progress {
+  animation: progressFlashJs 1s ease;
+}
